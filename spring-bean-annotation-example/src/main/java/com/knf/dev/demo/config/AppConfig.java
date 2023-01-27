@@ -1,6 +1,7 @@
 package com.knf.dev.demo.config;
 
 import com.knf.dev.demo.service.EmailService;
+import com.knf.dev.demo.service.MessageService;
 import com.knf.dev.demo.service.SMSService;
 import com.knf.dev.demo.service.TwitterService;
 import org.springframework.context.annotation.Bean;
@@ -10,17 +11,17 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    public SMSService smsService() {
+    public MessageService smsService() {
         return new SMSService();
     }
 
     @Bean(name= {"myEmailService","systemEmailService"})
-    public EmailService emailService() {
+    public MessageService emailService() {
         return new EmailService();
     }
 
     @Bean(initMethod="init", destroyMethod="destroy")
-    public TwitterService twitterService() {
+    public MessageService twitterService() {
         return new TwitterService();
     }
 
