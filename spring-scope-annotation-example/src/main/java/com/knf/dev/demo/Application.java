@@ -29,17 +29,15 @@ public class Application  {
 
 
       //Example using Java-based configuration
-      MessageService smsService = context.
-              getBean(SMSService.class);
+      MessageService smsService = (MessageService) context.
+              getBean("smsService");
       smsService.
               setMessage("SMSMessageService Implementation");
       System.out.println(smsService.getMessage());
 
-      MessageService smsService1 = context.
-              getBean(SMSService.class);
+      MessageService smsService1 = (MessageService) context.
+              getBean("smsService");
       System.out.println(smsService1.getMessage());
-
-
 
       context.close();
    }
