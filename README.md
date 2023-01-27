@@ -1,5 +1,4 @@
 # Spring Annotations
-# Spring Boot examples
 
 # Local setup
 
